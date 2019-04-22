@@ -25,8 +25,7 @@
     <script src="https://js.arcgis.com/4.11/"></script>
 
     <script>
-      require(["esri/Map", "esri/views/MapView", "esri/Graphic", "esri/geometry/Point",
-  "esri/symbols/SimpleMarkerSymbol", "esri/layers/FeatureLayer"], function(Map, MapView, Graphic, Point, SimpleMarkerSymbol, FeatureLayer) {
+      require(["esri/Map", "esri/views/MapView"], function(Map, MapView) {
         var map = new Map({
           basemap: "Terrain with Labels"
         });
@@ -36,8 +35,9 @@
           map: map,
           zoom: 4,
           center: [-95, 40] // longitude, latitude
-		 
+		});
       });
+		  
     </script>
   </head>
 
