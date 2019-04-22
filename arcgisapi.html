@@ -36,6 +36,14 @@
           map: map,
           zoom: 4,
           center: [-95, 40] // longitude, latitude
+		 ,extent:{
+			 xmin: 1,
+			 ymin: 1,
+			 xmax: 500000,
+			 ymax: 500000,
+			 spatialRefence: 102100
+		 }
+		 }
         });
 		  var featureLayer = new FeatureLayer({url: "states.shp"});
 		  map.add(featureLayer);
