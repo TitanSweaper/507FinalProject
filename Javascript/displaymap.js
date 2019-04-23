@@ -1,4 +1,5 @@
 // JavaScript Document
 
 const hello = 'hello';
-hello;
+
+alert(hello);
