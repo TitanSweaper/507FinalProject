@@ -1,4 +1,4 @@
 // JavaScript Document
 
-const hello = hello;
+const hello = 'hello';
 hello;
