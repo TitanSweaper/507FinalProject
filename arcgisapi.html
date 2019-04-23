@@ -25,7 +25,7 @@
     <script src="https://js.arcgis.com/4.11/"></script>
 
     <script>
-      require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer","esri/geometry/Polygon"], function(Map, MapView, FeatureLayer, Polygon) {
+      require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer","esri/geometry/Polygon", "esri/Graphic"], function(Map, MapView, FeatureLayer, Polygon, Graphic) {
         var map = new Map({
           basemap: "hybrid"
         });
@@ -40,10 +40,15 @@
 		const attr = url= "shapefiles/montana/miningdistricts/MineDist1994.dbf";
 		  
 		var minedist = new Polygon({
-			addRing: rings,
+			rings: rings,
 			attributes: attr,
 			
 		});
+		  
+		var minedistgrap = Graphic({
+			geometry: minedist.rings,
+		});
+		view.graphics.add(minedistgrap);
       });
 		  
     </script>
