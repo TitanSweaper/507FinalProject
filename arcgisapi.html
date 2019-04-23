@@ -25,7 +25,7 @@
     <script src="https://js.arcgis.com/4.11/"></script>
 
     <script>
-      require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer","esri/geometry/Polygon", "esri/Graphic"], function(Map, MapView, FeatureLayer, Polygon, Graphic) {
+      require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer","esri/geometry/Polygon", "esri/Graphic","esri/symbols/FillSymbol"], function(Map, MapView, FeatureLayer, Polygon, Graphic, FillSymbol) {
         var map = new Map({
           basemap: "hybrid"
         });
@@ -47,6 +47,15 @@
 		  
 		var minedistgrap = Graphic({
 			geometry: minedist.rings,
+			symbol: 
+				{
+				type: "simple-fill",  // autocasts as new SimpleFillSymbol()
+  				color: "red",
+  				outline: {  // autocasts as new SimpleLineSymbol()
+    				color: [128, 128, 128, 0.5],
+    				width: "0.5px"
+  				}
+			}
 		});
 		view.graphics.add(minedistgrap);
       });
