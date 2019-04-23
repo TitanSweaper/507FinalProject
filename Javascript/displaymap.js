@@ -1,5 +1,5 @@
 // JavaScript Document
 
-const hello = 'hello';
-
-alert(hello);
+function display() {
+   alert("Hello World!");
+}
