@@ -14,8 +14,26 @@
 	<script src="Javascript/displaymap.js" type="text/javascript"></script>
 	<h1>Regional Mine Locations</h1>
 	<a href="arcgisapi.html"><p>Click to view ArcGIS API for JavaScript</p></a>
-	<form>
-      <input type="button" value="Result" onclick="display()"/>
+	<form action="arcgisapi.html" method="post">
+      <section class="State">
+          <label for="state">Which state would you like?</label>
+          <select name="state" id="state">
+            <option value="california">California</option>
+            <option value="montana">Montana</option>
+            <option value="minnesota">Minnesota</option>
+          </select>
+        </section>
+		<section class="mines">
+          <label for="mines">Which mines would you like?</label>
+          <select name="mines" id="mines">
+            <option value="All">all</option>
+            <option value="SG">sand and gravel</option>
+            <option value="min">mineral</option>
+          </select>
+        </section>
+		<section class="submission">
+          <input type="submit" value="Submit">
+        </section>
     </form>
 </body>
 </html>
