@@ -11,11 +11,14 @@
 </head>
 
 <body>
-	<script src="Javascript/displaymap.js" type="text/javascript"></script>
+	<script src="Javascript/displaymap.js" type="text/javascript">
+		var imagefile;
+		imagefile='images/'+ state + mines + '.gif';
+	</script>
 	<h1>Regional Mine Locations</h1>
 	<a href="arcgisapi.html"><p>Click to view ArcGIS API for JavaScript</p></a>
-	<form action="arcgisapi.html">
-      <section class="State">
+	<form action="imagefile">
+      <section class="state">
           <label for="state">Which state would you like?</label>
           <select name="state" id="state">
             <option value="california">California</option>
@@ -33,6 +36,7 @@
         </section>
 		<section class="submission">
           <input type="submit" value="Submit">
+		  
         </section>
     </form>
 </body>
