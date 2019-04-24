@@ -4,3 +4,10 @@
 h1{
 	color:aqua;
 }
+
+.body{
+	background-color: dimgray;
+}
+#one, #two{
+	visibility: hidden;
+}
