@@ -4,4 +4,3 @@ function display() {
    for(let counter = 0; counter < images.length; counter++)
 	document.getElementById(images[counter]).style.height = "0px";
 }
-display();

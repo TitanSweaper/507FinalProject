@@ -6,18 +6,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mines of States</title>
 <link href="style.css" rel="stylesheet" type="text/css">
-<!<link href="css/bootstrap-4.3.1.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-4.3.1.css" rel="stylesheet" type="text/css">
+<script src="Javascript/displaymap.js" type="text/javascript">
+	display();
+	</script>
 
 </head>
 
 <body class="body">
-	<script src="Javascript/displaymap.js" type="text/javascript">
-		var imagefile;
-		imagefile='images/'+ state + mines + '.gif';
-	</script>
 	<h1>Regional Mine Locations</h1>
 	<a href="arcgisapi.html"><p>Click to view ArcGIS API for JavaScript</p></a>
-	<form action="arcgisapi.html">
+	<div class="btn-group" role="group">
+	  <button type="button" class="btn btn-secondary" onClick="diplim(0)">Button 1</button>
+	  <button type="button" class="btn btn-secondary disabled" onClick="diplim(1)">Disabled Button</button>
+	  <button type="button" class="btn btn-secondary active" onClick="diplim(2)">Active Button</button>
+	  </div>
+<form action="arcgisapi.html">
       <section class="state">
           <label for="state">Which state would you like?</label>
           <select name="state" id="state">
