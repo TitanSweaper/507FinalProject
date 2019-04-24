@@ -9,5 +9,5 @@ h1{
 	background-color: dimgray;
 }
 #one, #two{
-	visibility: hidden;
+	visibility: collapse;
 }
