@@ -8,7 +8,39 @@ h1{
 .body{
 	background-color: dimgray;
 }
-#one, #two{
+#one{
   	max-width: 80%;
  	height: auto;
+	
+}
+#two{
+  	max-width: 80%;
+ 	height: auto;
+	
+}
+#three{
+  	max-width: 80%;
+ 	height: auto;
+	
+}
+#four{
+  	max-width: 80%;
+ 	height: auto;
+	
+}
+#five{
+  	max-width: 80%;
+ 	height: auto;
+	
+}
+#six{
+  	max-width: 80%;
+ 	height: auto;
+	
+}
+
+.img-fluid{
+  	max-width: 100%;
+ 	height: auto;
+	
 }
