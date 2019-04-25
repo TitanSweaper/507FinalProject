@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mines of States</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap-4.3.1.css" rel="stylesheet" type="text/css">
 <script src="Javascript/displaymap.js" type="text/javascript"></script>
 
@@ -14,33 +14,22 @@
 <body class="body" onLoad="display()">
 	<h1>Regional Mine Locations</h1>
 	<a href="arcgisapi.html"><p>Click to view ArcGIS API for JavaScript</p></a>
-	<div class="btn-group" role="group">
-	  <button type="button" class="btn btn-secondary" onClick="diplim(0)">Button 1</button>
-	  <button type="button" class="btn btn-secondary disabled" onClick="diplim(1)">Disabled Button</button>
-	  <button type="button" class="btn btn-secondary active" onClick="diplim(2)">Active Button</button>
-	  </div>
-<form action="arcgisapi.html">
+	<form onsubmit = "state">
       <section class="state">
           <label for="state">Which state would you like?</label>
-          <select name="state" id="state">
+          <select name="state" id="state" >
             <option value="california">California</option>
             <option value="montana">Montana</option>
             <option value="minnesota">Minnesota</option>
           </select>
         </section>
-		<section class="mines">
-          <label for="mines">Which mines would you like?</label>
-          <select name="mines" id="mines">
-            <option value="All">all</option>
-            <option value="SG">sand and gravel</option>
-            <option value="mineral">mineral</option>
-          </select>
-        </section>
-		<section class="submission">
-          <input type="submit" value="Submit">
-		  
-        </section>
     </form>
+	<div class="btn-group" role="group">
+	  <button type="button" class="btn btn-secondary" onClick="diplim(0)">All Mine Types</button>
+	  <button type="button" class="btn btn-secondary disabled" onClick="diplim(1)">Mineral Mines</button>
+	  <button type="button" class="btn btn-secondary active" onClick="diplim(2)">Sand and Gravel</button>
+	  </div>
+
 	<img id="one" src="images/californiaAll.gif" alt="image unloaded" width="" class="img-fluid">
 	<img id="two" src="images/californiamineral.gif" alt="image unloaded" width="" class="img-fluid">
 	<img id="three" src="images/californiaSG.gif" alt="image unloaded" width="" class="img-fluid">
