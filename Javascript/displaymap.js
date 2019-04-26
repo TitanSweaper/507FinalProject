@@ -5,8 +5,8 @@ function display() {
 	document.getElementById(images[counter]).style.height = "0px";
 }
 
-function diplim(btname,state) {
+/*function diplim(btname,state) {
 	display();
 	const name = state + btname;
 	document.getElementById(name).style.height = "auto";
-}
+}*/
