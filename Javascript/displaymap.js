@@ -7,5 +7,6 @@ function display() {
 
 function diplim(btname,state) {
 	display();
-	document.getElementById(state+btname).style.height = "auto";
+	const name = state + btname;
+	document.getElementById(name).style.height = "auto";
 }
