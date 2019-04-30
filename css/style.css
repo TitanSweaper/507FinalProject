@@ -8,35 +8,58 @@ h1{
 .bodyx{
 	background-color: dimgray;
 }
+#cat{
+	max-width: 80%;
+ 	height: auto;
+}
+#catAll{
+	max-width: 80%;
+ 	height: 0px;
+}
+#catmineral{
+	max-width: 80%;
+ 	height: 0px;
+}
+#catSG{
+	max-width: 80%;
+ 	height: 0px;
+	
+}
 #californiaAll{
   	max-width: 80%;
  	height: 0px;
-	
 }
 #californiamineral{
   	max-width: 80%;
  	height: 0px;
-	
 }
 #californiaSG{
   	max-width: 80%;
  	height: 0px;
-	
 }
 #montanaAll{
   	max-width: 80%;
  	height: 0px;
-	
 }
 #montanamineral{
   	max-width: 80%;
  	height: 0px;
-	
 }
 #montanaSG{
   	max-width: 80%;
  	height: 0px;
-	
+}
+#USminingAll{
+  	max-width: 80%;
+ 	height: 0px;
+}
+#USminingmineral{
+  	max-width: 80%;
+ 	height: 0px;
+}
+#USminingSG{
+  	max-width: 80%;
+ 	height: 0px;
 }
 .hide{
 	height: 0px;
