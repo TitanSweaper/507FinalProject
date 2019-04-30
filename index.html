@@ -11,26 +11,30 @@
 
 </head>
 
-<body class="body" onLoad="display()">
+<body class="bodyx">
 	<h1>Regional Mine Locations</h1>
 	<a href="arcgisapi.html"><p>Click to view ArcGIS API for JavaScript</p></a>
-	<form onsubmit = "state">
-      <section class="state">
-          <label for="state">Which state would you like?</label>
-          <select name="state" id="state" onChange ="show(state)">
+	<form>
+      <section >
+          <label>Which state would you like?</label>
+          <select name="sstate" id="state" onchange = "change(' ')">
+			<option value="cat">Choose a state</option>
             <option value="california">California</option>
             <option value="montana">Montana</option>
             <option value="minnesota">Minnesota</option>
           </select>
-		  <div id="statebutton">
-		  </div>
         </section>
     </form>
-	<!--<div class="btn-group" role="group">
-	  <button type="button" class="btn btn-secondary" onClick="diplime(All,state)">All Mine Types</button>
-	  <button type="button" class="btn btn-secondary" onClick="diplime(mineral,state)">Mineral Mines</button>
-	  <button type="button" class="btn btn-secondary" onClick="diplime(SG,state)">Sand and Gravel</button>
-	  </div>-->
+	<div class="btn-group" role="group">
+	  <button type="button" class="btn btn-secondary" onClick="change('all')">All Mine Types</button>
+	  <button type="button" class="btn btn-secondary" onClick="change('mineral')">Mineral Mines</button>
+	  <button type="button" class="btn btn-secondary" onClick="change('SG')">Sand and Gravel</button>
+	</div>
+	<p id="demo"></p>
+	<p id="test"></p>
+	<p id="check"></p>
+	
+
 
 	<img id="one" src="images/californiaAll.gif" alt="image unloaded" width="" class="img-fluid">
 	<img id="two" src="images/californiamineral.gif" alt="image unloaded" width="" class="img-fluid">
