@@ -8,34 +8,36 @@ h1{
 .bodyx{
 	background-color: dimgray;
 }
-#one{
+#californiaAll{
   	max-width: 80%;
  	height: 0px;
 	
 }
-#two{
+#californiamineral{
   	max-width: 80%;
  	height: 0px;
 	
 }
-#three{
+#californiaSG{
   	max-width: 80%;
  	height: 0px;
 	
 }
-#four{
+#montanaAll{
   	max-width: 80%;
  	height: 0px;
 	
 }
-#five{
+#montanamineral{
   	max-width: 80%;
  	height: 0px;
 	
 }
-#six{
+#montanaSG{
   	max-width: 80%;
  	height: 0px;
 	
 }
-
+.hide{
+	height: 0px;
+}

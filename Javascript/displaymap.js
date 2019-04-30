@@ -19,10 +19,26 @@ function show() {
 function change(nam) {
 	var placeholder = nam;
 	document.getElementById("test").innerHTML = "You selected: " + nam;
-	running(placeholder);
+	call(running(placeholder));
 }
 
 function running(change) {
 	var showe = show;
 	document.getElementById("check").innerHTML = "You selected: " + showe() + change;
+	var result= showe() + change;
+	return result;
+}
+
+function call(run) {
+	setall();
+	document.getElementById(run).style.height = "auto";
+}
+
+function setall() {
+	document.getElementById("californiaAll").style.height = "0px";
+	document.getElementById("californiamineral").style.height = "0px";
+	document.getElementById("californiaSG").style.height = "0px";
+	document.getElementById("montanaAll").style.height = "0px";
+	document.getElementById("montanamineral").style.height = "0px";
+	document.getElementById("montanaSG").style.height = "0px";
 }
