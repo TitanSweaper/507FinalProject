@@ -29,6 +29,19 @@ function running(change) {
 	return result;
 }
 
+function gbid(s){return document.getElementById(s);}
+
+function GetData(cell,row){
+    var excel = new ActiveXObject("Excel.Application");
+    var excel_file = excel.Workbooks.Open("I:\\test.xlsx");
+    var sht = excel.Worksheets("Sheet1");
+
+    gbid('div1').innerText = sht.Cells(1,1).Value;
+    gbid('div2').innerText = sht.Cells(1,2).Value;
+    gbid('div3').innerText = sht.Cells(2,1).Value;
+    gbid('div4').innerText = sht.Cells(2,2).Value;
+}
+
 function call(run) {
 	setall();
 	document.getElementById(run).style.height = "auto";
