@@ -5,6 +5,10 @@ h1{
 	color:aqua;
 }
 
+#statetable{
+	font-size: 0px;
+}
+
 .bodyx{
 	background-color: dimgray;
 }
