@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mines of States</title>
+  <style>
+      #viewDiv {
+        padding: 1;
+        margin: 1;
+        height: 50%;
+        width: 50%;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.11/">
+    
+      require(["esri/Map", "esri/views/MapView"], function(Map, MapView) {
+        var map = new Map({
+          basemap: "hybrid"
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          zoom: 6,
+          center: [-123, 38] // longitude, latitude
+		});
+	  });
+	</script>  
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap-4.3.1.css" rel="stylesheet" type="text/css">
+  <script src="Javascript/displaymap.js" type="text/javascript"></script>
+  
+</head>
+
+<body class="bodyx">
+	<h1>Regional Mine Locations</h1>
+
+<form>
+      <section >
+          <label>Select a state to view: </label>
+        <select name="sstate" id="state" onchange = "set()" > 
+		   	<option value ="USContiguous">US Contiguous</option>
+			<option value ="Alabama">Alabama</option>
+			<option value ="Alaska">Alaska</option>
+			<option value ="Arizona">Arizona</option>
+			<option value ="Arkansas">Arkansas</option>
+			<option value ="California">California</option>
+			<option value ="Colorado">Colorado</option>
+			<option value ="Connecticut">Connecticut</option>
+			<option value ="Delaware">Delaware</option>
+			<option value ="DistrictofColumbia">District of Columbia</option>
+			<option value ="Florida">Florida</option>
+			<option value ="Georgia">Georgia</option>
+			<option value ="Hawaii">Hawaii</option>
+			<option value ="Idaho">Idaho</option>
+			<option value ="Illinois">Illinois</option>
+			<option value ="Indiana">Indiana</option>
+			<option value ="Iowa">Iowa</option>
+			<option value ="Kansas">Kansas</option>
+			<option value ="Kentucky">Kentucky</option>
+			<option value ="Louisiana">Louisiana</option>
+			<option value ="Maine">Maine</option>
+			<option value ="Maryland">Maryland</option>
+			<option value ="Massachusetts">Massachusetts</option>
+			<option value ="Michigan">Michigan</option>
+			<option value ="Minnesota">Minnesota</option>
+			<option value ="Mississippi">Mississippi</option>
+			<option value ="Missouri">Missouri</option>
+			<option value ="Montana">Montana</option>
+			<option value ="Nebraska">Nebraska</option>
+			<option value ="Nevada">Nevada</option>
+			<option value ="NewHampshire">New Hampshire</option>
+			<option value ="NewJersey">New Jersey</option>
+			<option value ="NewMexico">New Mexico</option>
+			<option value ="NewYork">New York</option>
+			<option value ="NorthCarolina">North Carolina</option>
+			<option value ="NorthDakota">North Dakota</option>
+			<option value ="Ohio">Ohio</option>
+			<option value ="Oklahoma">Oklahoma</option>
+			<option value ="Oregon">Oregon</option>
+			<option value ="Pennsylvania">Pennsylvania</option>
+			<option value ="RhodeIsland">Rhode Island</option>
+			<option value ="SouthCarolina">South Carolina</option>
+			<option value ="SouthDakota">South Dakota</option>
+			<option value ="Tennessee">Tennessee</option>
+			<option value ="Texas">Texas</option>
+			<option value ="Utah">Utah</option>
+			<option value ="Vermont">Vermont</option>
+			<option value ="Virginia">Virginia</option>
+			<option value ="Washington">Washington</option>
+			<option value ="WestVirginia">West Virginia</option>
+			<option value ="Wisconsin">Wisconsin</option>
+			<option value ="Wyoming">Wyoming</option>
+        </select>
+      </section>
+    </form>
+<div class="btn-group" role="group">
+	  <button type="button" class="btn btn-secondary" onClick="set()">All Mine Types</button>
+	  <button type="button" class="btn btn-secondary" onClick="setmineral()">Mineral Mines</button>
+	  <button type="button" class="btn btn-secondary" onClick="setSG()">Sand and Gravel</button>
+	</div>
+	<p id="demo"><br></p> 
+	<table>
+	<tr>
+		<td><img id="legend" src="images/Legend.gif" alt="image unavailable" width="" class="img-fluid,hide"/></td>
+		<td class="transparent">hell</td>
+		<td><img id="cat" src="images/All/USContiguous.gif" alt="image unavailable" width="" class="img-fluid, hide"/></td>
+	</tr>
+	<tr height="100"></tr>
+	<tr height="1000"><td height="300" width="300"><div id= "viewDiv"></div></td></tr>
+	</table>
+<div><br></div>
+</body>
+	<footer><p><a href="references.html">Sources &nbsp;&nbsp;</a><a href="Sitemap.html">Site Map</a></p>
+  <table id="statetable" summary="images list" onload="initialize()">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">SRC</th>
+    </tr>
+    <tr id="USContiguous"><td>USContiguous</td><td>US Contiguous</td><td>images/All/USContiguous.gif</td><td>images/Mineral/USContiguous.gif</td><td>images/SandandGravel/USContiguous.gif</td></tr>
+	<tr id="Alabama"><td>Alabama</td><td>Alabama</td><td>images/All/Alabama.gif</td><td>images/Mineral/Alabama.gif</td><td>images/SandandGravel/Alabama.gif</td></tr>
+	<tr id="Alaska"><td>Alaska</td><td>Alaska</td><td>images/All/Alaska.gif</td><td>images/Mineral/Alaska.gif</td><td>images/SandandGravel/Alaska.gif</td></tr>
+<tr id="Arizona"><td>Arizona</td><td>Arizona</td><td>images/All/Arizona.gif</td><td>images/Mineral/Arizona.gif</td><td>images/SandandGravel/Arizona.gif</td></tr>
+<tr id="Arkansas"><td>Arkansas</td><td>Arkansas</td><td>images/All/Arkansas.gif</td><td>images/Mineral/Arkansas.gif</td><td>images/SandandGravel/Arkansas.gif</td></tr>
+<tr id="California"><td>California</td><td>California</td><td>images/All/California.gif</td><td>images/Mineral/California.gif</td><td>images/SandandGravel/California.gif</td></tr>
+<tr id="Colorado"><td>Colorado</td><td>Colorado</td><td>images/All/Colorado.gif</td><td>images/Mineral/Colorado.gif</td><td>images/SandandGravel/Colorado.gif</td></tr>
+<tr id="Connecticut"><td>Connecticut</td><td>Connecticut</td><td>images/All/Connecticut.gif</td><td>images/Mineral/Connecticut.gif</td><td>images/SandandGravel/Connecticut.gif</td></tr>
+<tr id="Delaware"><td>Delaware</td><td>Delaware</td><td>images/All/Delaware.gif</td><td>images/Mineral/Delaware.gif</td><td>images/SandandGravel/Delaware.gif</td></tr>
+<tr id="DistrictofColumbia"><td>DistrictofColumbia</td><td>District of Columbia</td><td>images/All/DistrictofColumbia.gif</td><td>images/Mineral/DistrictofColumbia.gif</td><td>images/SandandGravel/DistrictofColumbia.gif</td></tr>
+<tr id="Florida"><td>Florida</td><td>Florida</td><td>images/All/Florida.gif</td><td>images/Mineral/Florida.gif</td><td>images/SandandGravel/Florida.gif</td></tr>
+<tr id="Georgia"><td>Georgia</td><td>Georgia</td><td>images/All/Georgia.gif</td><td>images/Mineral/Georgia.gif</td><td>images/SandandGravel/Georgia.gif</td></tr>
+<tr id="Hawaii"><td>Hawaii</td><td>Hawaii</td><td>images/All/Hawaii.gif</td><td>images/Mineral/Hawaii.gif</td><td>images/SandandGravel/Hawaii.gif</td></tr>
+<tr id="Idaho"><td>Idaho</td><td>Idaho</td><td>images/All/Idaho.gif</td><td>images/Mineral/Idaho.gif</td><td>images/SandandGravel/Idaho.gif</td></tr>
+<tr id="Illinois"><td>Illinois</td><td>Illinois</td><td>images/All/Illinois.gif</td><td>images/Mineral/Illinois.gif</td><td>images/SandandGravel/Illinois.gif</td></tr>
+<tr id="Indiana"><td>Indiana</td><td>Indiana</td><td>images/All/Indiana.gif</td><td>images/Mineral/Indiana.gif</td><td>images/SandandGravel/Indiana.gif</td></tr>
+<tr id="Iowa"><td>Iowa</td><td>Iowa</td><td>images/All/Iowa.gif</td><td>images/Mineral/Iowa.gif</td><td>images/SandandGravel/Iowa.gif</td></tr>
+<tr id="Kansas"><td>Kansas</td><td>Kansas</td><td>images/All/Kansas.gif</td><td>images/Mineral/Kansas.gif</td><td>images/SandandGravel/Kansas.gif</td></tr>
+<tr id="Kentucky"><td>Kentucky</td><td>Kentucky</td><td>images/All/Kentucky.gif</td><td>images/Mineral/Kentucky.gif</td><td>images/SandandGravel/Kentucky.gif</td></tr>
+<tr id="Louisiana"><td>Louisiana</td><td>Louisiana</td><td>images/All/Louisiana.gif</td><td>images/Mineral/Louisiana.gif</td><td>images/SandandGravel/Louisiana.gif</td></tr>
+<tr id="Maine"><td>Maine</td><td>Maine</td><td>images/All/Maine.gif</td><td>images/Mineral/Maine.gif</td><td>images/SandandGravel/Maine.gif</td></tr>
+<tr id="Maryland"><td>Maryland</td><td>Maryland</td><td>images/All/Maryland.gif</td><td>images/Mineral/Maryland.gif</td><td>images/SandandGravel/Maryland.gif</td></tr>
+<tr id="Massachusetts"><td>Massachusetts</td><td>Massachusetts</td><td>images/All/Massachusetts.gif</td><td>images/Mineral/Massachusetts.gif</td><td>images/SandandGravel/Massachusetts.gif</td></tr>
+<tr id="Michigan"><td>Michigan</td><td>Michigan</td><td>images/All/Michigan.gif</td><td>images/Mineral/Michigan.gif</td><td>images/SandandGravel/Michigan.gif</td></tr>
+<tr id="Minnesota"><td>Minnesota</td><td>Minnesota</td><td>images/All/Minnesota.gif</td><td>images/Mineral/Minnesota.gif</td><td>images/SandandGravel/Minnesota.gif</td></tr>
+<tr id="Mississippi"><td>Mississippi</td><td>Mississippi</td><td>images/All/Mississippi.gif</td><td>images/Mineral/Mississippi.gif</td><td>images/SandandGravel/Mississippi.gif</td></tr>
+<tr id="Missouri"><td>Missouri</td><td>Missouri</td><td>images/All/Missouri.gif</td><td>images/Mineral/Missouri.gif</td><td>images/SandandGravel/Missouri.gif</td></tr>
+<tr id="Montana"><td>Montana</td><td>Montana</td><td>images/All/Montana.gif</td><td>images/Mineral/Montana.gif</td><td>images/SandandGravel/Montana.gif</td></tr>
+<tr id="Nebraska"><td>Nebraska</td><td>Nebraska</td><td>images/All/Nebraska.gif</td><td>images/Mineral/Nebraska.gif</td><td>images/SandandGravel/Nebraska.gif</td></tr>
+<tr id="Nevada"><td>Nevada</td><td>Nevada</td><td>images/All/Nevada.gif</td><td>images/Mineral/Nevada.gif</td><td>images/SandandGravel/Nevada.gif</td></tr>
+<tr id="NewHampshire"><td>NewHampshire</td><td>New Hampshire</td><td>images/All/NewHampshire.gif</td><td>images/Mineral/NewHampshire.gif</td><td>images/SandandGravel/NewHampshire.gif</td></tr>
+<tr id="NewJersey"><td>NewJersey</td><td>New Jersey</td><td>images/All/NewJersey.gif</td><td>images/Mineral/NewJersey.gif</td><td>images/SandandGravel/NewJersey.gif</td></tr>
+<tr id="NewMexico"><td>NewMexico</td><td>New Mexico</td><td>images/All/NewMexico.gif</td><td>images/Mineral/NewMexico.gif</td><td>images/SandandGravel/NewMexico.gif</td></tr>
+<tr id="NewYork"><td>NewYork</td><td>New York</td><td>images/All/NewYork.gif</td><td>images/Mineral/NewYork.gif</td><td>images/SandandGravel/NewYork.gif</td></tr>
+<tr id="NorthCarolina"><td>NorthCarolina</td><td>North Carolina</td><td>images/All/NorthCarolina.gif</td><td>images/Mineral/NorthCarolina.gif</td><td>images/SandandGravel/NorthCarolina.gif</td></tr>
+<tr id="NorthDakota"><td>NorthDakota</td><td>North Dakota</td><td>images/All/NorthDakota.gif</td><td>images/Mineral/NorthDakota.gif</td><td>images/SandandGravel/NorthDakota.gif</td></tr>
+<tr id="Ohio"><td>Ohio</td><td>Ohio</td><td>images/All/Ohio.gif</td><td>images/Mineral/Ohio.gif</td><td>images/SandandGravel/Ohio.gif</td></tr>
+<tr id="Oklahoma"><td>Oklahoma</td><td>Oklahoma</td><td>images/All/Oklahoma.gif</td><td>images/Mineral/Oklahoma.gif</td><td>images/SandandGravel/Oklahoma.gif</td></tr>
+<tr id="Oregon"><td>Oregon</td><td>Oregon</td><td>images/All/Oregon.gif</td><td>images/Mineral/Oregon.gif</td><td>images/SandandGravel/Oregon.gif</td></tr>
+<tr id="Pennsylvania"><td>Pennsylvania</td><td>Pennsylvania</td><td>images/All/Pennsylvania.gif</td><td>images/Mineral/Pennsylvania.gif</td><td>images/SandandGravel/Pennsylvania.gif</td></tr>
+<tr id="RhodeIsland"><td>RhodeIsland</td><td>Rhode Island</td><td>images/All/RhodeIsland.gif</td><td>images/Mineral/RhodeIsland.gif</td><td>images/SandandGravel/RhodeIsland.gif</td></tr>
+<tr id="SouthCarolina"><td>SouthCarolina</td><td>South Carolina</td><td>images/All/SouthCarolina.gif</td><td>images/Mineral/SouthCarolina.gif</td><td>images/SandandGravel/SouthCarolina.gif</td></tr>
+<tr id="SouthDakota"><td>SouthDakota</td><td>South Dakota</td><td>images/All/SouthDakota.gif</td><td>images/Mineral/SouthDakota.gif</td><td>images/SandandGravel/SouthDakota.gif</td></tr>
+<tr id="Tennessee"><td>Tennessee</td><td>Tennessee</td><td>images/All/Tennessee.gif</td><td>images/Mineral/Tennessee.gif</td><td>images/SandandGravel/Tennessee.gif</td></tr>
+<tr id="Texas"><td>Texas</td><td>Texas</td><td>images/All/Texas.gif</td><td>images/Mineral/Texas.gif</td><td>images/SandandGravel/Texas.gif</td></tr>
+<tr id="Utah"><td>Utah</td><td>Utah</td><td>images/All/Utah.gif</td><td>images/Mineral/Utah.gif</td><td>images/SandandGravel/Utah.gif</td></tr>
+<tr id="Vermont"><td>Vermont</td><td>Vermont</td><td>images/All/Vermont.gif</td><td>images/Mineral/Vermont.gif</td><td>images/SandandGravel/Vermont.gif</td></tr>
+<tr id="Virginia"><td>Virginia</td><td>Virginia</td><td>images/All/Virginia.gif</td><td>images/Mineral/Virginia.gif</td><td>images/SandandGravel/Virginia.gif</td></tr>
+<tr id="Washington"><td>Washington</td><td>Washington</td><td>images/All/Washington.gif</td><td>images/Mineral/Washington.gif</td><td>images/SandandGravel/Washington.gif</td></tr>
+<tr id="WestVirginia"><td>WestVirginia</td><td>West Virginia</td><td>images/All/WestVirginia.gif</td><td>images/Mineral/WestVirginia.gif</td><td>images/SandandGravel/WestVirginia.gif</td></tr>
+<tr id="Wisconsin"><td>Wisconsin</td><td>Wisconsin</td><td>images/All/Wisconsin.gif</td><td>images/Mineral/Wisconsin.gif</td><td>images/SandandGravel/Wisconsin.gif</td></tr>
+<tr id="Wyoming"><td>Wyoming</td><td>Wyoming</td><td>images/All/Wyoming.gif</td><td>images/Mineral/Wyoming.gif</td><td>images/SandandGravel/Wyoming.gif</td></tr>
+
+
+  </table>
+</footer>
+</html>
+
