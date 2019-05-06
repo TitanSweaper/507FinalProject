@@ -19,7 +19,7 @@ a{
 	background-color: dimgray;
 }
 #cat{
-	max-width: 70%;
+	max-width: 100%;
  	height: auto;
 	opacity: 1.0;
 }
@@ -29,4 +29,10 @@ a{
 }
 label{
 	color:white
+}
+#legend{
+	max-width: 105%
+}
+.transparent{
+	opacity: 0.0
 }
